@@ -49,7 +49,6 @@ async def plugin_logo():
 @app.get("/.well-known/ai-plugin.json")
 async def plugin_manifest(request: Request):
     host = request.headers['host']
-
     with open(".well-known/ai-plugin.json") as f:
         text = f.read().replace("PLUGIN_HOSTNAME", f"https://{host}")
         return JSONResponse(content=json.loads(text))

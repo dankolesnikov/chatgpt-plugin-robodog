@@ -9,10 +9,10 @@
   },
   "api": {
     "type": "openapi",
-    "url": "PLUGIN_HOSTNAME:3000/openapi.json",
+    "url": "PLUGIN_HOSTNAME/openapi.json",
     "is_user_authenticated": false
   },
-  "logo_url": "PLUGIN_HOSTNAME:3000/logo.png",
+  "logo_url": "PLUGIN_HOSTNAME/logo.png",
   "contact_email": "danil.roark@gmail.com",
   "legal_info_url": "https://en.wikipedia.org/wiki/The_Terminator"
 }
