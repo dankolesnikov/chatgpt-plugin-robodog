@@ -16,6 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/sit")
 async def sit():
     """
@@ -50,3 +51,7 @@ async def plugin_manifest():
     with open(".well-known/ai-plugin.json") as f:
         text = f.read()
         return JSONResponse(content=json.loads(text))
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=3000)
