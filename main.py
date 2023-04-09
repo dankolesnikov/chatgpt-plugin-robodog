@@ -29,6 +29,18 @@ async def sit():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/record-video")
+async def record_video():
+    """
+    This endpoint is used to tell the robot to record a video.
+    It takes no parameters.
+    """
+    try:
+        return JSONResponse(content='OK', status_code=200)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.get("/dance")
 async def dance():
     """
