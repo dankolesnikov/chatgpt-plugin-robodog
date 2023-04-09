@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse
 import json
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,7 +21,7 @@ app.add_middleware(
 async def sit():
     """
     This endpoint is used to tell the robot to sit.
-    It takes no parameters. 
+    It takes no parameters.
     """
     try:
         return JSONResponse(content='OK', status_code=200)
@@ -33,7 +33,7 @@ async def sit():
 async def dance():
     """
     This endpoint is used to tell the robot to do a dance.
-    It takes no parameters. 
+    It takes no parameters.
     """
     try:
         return JSONResponse(content='OK', status_code=200)
@@ -47,9 +47,11 @@ async def plugin_logo():
 
 
 @app.get("/.well-known/ai-plugin.json")
-async def plugin_manifest():
+async def plugin_manifest(request: Request):
+    host = request.headers['host']
+
     with open(".well-known/ai-plugin.json") as f:
-        text = f.read()
+        text = f.read().replace("PLUGIN_HOSTNAME", f"https://{host}")
         return JSONResponse(content=json.loads(text))
 
 if __name__ == "__main__":
