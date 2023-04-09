@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Robodog",
+  "name_for_model": "robodog",
+  "description_for_human": "I am a robot dog named Whoof, ready to service you in anyway I can.",
+  "description_for_model": "a robot dog that is able to execute commands such as sit",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:3000/logo.png",
+  "contact_email": "danil.roark@gmail.com",
+  "legal_info_url": "https://en.wikipedia.org/wiki/The_Terminator"
+}

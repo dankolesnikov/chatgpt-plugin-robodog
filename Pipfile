@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.95.0"
+pydantic = "==1.10.7"
+uvicorn = "==0.21.1"
+openai = "*"
+
+[dev-packages]
+# run with pipenv run {script_name}
+
+[scripts]
+dev = "uvicorn main:app --port 3000 --host 0.0.0.0"
+
+[requires]
+python_version = "3.9"
